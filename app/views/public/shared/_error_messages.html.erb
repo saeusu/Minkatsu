@@ -1,0 +1,49 @@
+<% if resource.errors.any? %>
+  <div id="error_explanation" data-turbo-cache="false">
+    <h2>
+      <%= resource.errors.count %>件のエラーが発生しました
+    </h2>
+    <ul>
+      <% resource.errors.each do |attribute, message| %>
+      <% if attribute == :name %>
+        <% if resource.errors.include?(:name) %>
+          <li>名前を入力してください</li>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% resource.errors.each do |attribute, message| %>
+      <% if attribute == :nickname %>
+        <% if resource.errors.include?(:nickname) %>
+          <li>ニックネームを入力してください</li>
+        <% end %>  
+      <% end %>
+    <% end %>
+    <% resource.errors.each do |attribute, message| %>
+      <% if attribute == :email %>
+        <% if resource.errors.include?(:email) %>
+          <li>メールアドレスを入力してください</li>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% resource.errors.each do |attribute, message| %>
+      <% if attribute == :password %>
+        <% if resource.errors.include?(:password) %>
+          <li>パスワードを６文字以上で入力してください</li>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% resource.errors.each do |attribute, message| %>
+      <% if attribute == :password_confirmation %>
+        <% if resource.errors.include?(:password_confirmation) %>
+          <li>上記と同じパスワードを入力してください</li>
+        <% end %>
+      <% end %>
+    <% end %>
+    <% resource.errors.each do |attribute, message| %>
+      <% unless [:name, :nickname, :email, :password, :password_confirmation].include?(attribute) %>
+        <li><%= message %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
