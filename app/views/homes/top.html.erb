@@ -1,1 +1,13 @@
-<h2>Topページ</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Minkatsu</h2>
+        <div>
+          <%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary" %>
+        </div>
+        <div>
+          <%= link_to "ログイン", new_user_session_path, class:"btn btn-success" %>
+        </div>
+    </div>
+  </div>
+</div>

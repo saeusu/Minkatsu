@@ -10,12 +10,8 @@ class Public::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      # ログイン成功時の処理
-    else
-      flash.now[:alert] = "メールアドレスまたはパスワードが間違っています"
-      render :new
+    super do |resource|
+      flash.now[:alert] = "ログインに失敗しました" if resource.errors.any?
     end
   end
 
@@ -32,4 +28,24 @@ class Public::SessionsController < Devise::SessionsController
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
   end
+  
+  # def after_sign_in_path_for(resource)
+  #   mypage_path
+  # end
+  
+  def after_sign_out_path_for(resource)
+    root_path
+  end  
+
+  def reject_inactive_user
+    @user = User.find_by(email: params[:user][:email])
+    if @user
+      if @user.valid_password?(params[:user][:password]) && !@user.is_active
+        flash[:danger] = 'お客様は退会済みです。申し訳ございませんが、別のメールアドレスをお使いください。'
+        redirect_to new_user_session_path
+      end
+    end
+  end
+  
 end
+

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+    <h2>投稿編集</h2>  
+      <% if @post.errors.any? %>
+        <%= @post.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+      <%= form_with model: @post do |f| %>
+        <div>
+          <%= f.label :image, '商品画像' %>
+          <%= f.file_field :image %>
+        </div>
+        <div>
+          <%= f.label :name, '商品名' %>
+          <%= f.text_field :name %>
+        </div>  
+        <div>
+          <%= f.label :price, '金額' %>
+          <%= f.number_field :price %>円
+        </div>  
+        <div>
+          <%= f.label :body, '本文' %>
+          <%= f.text_area :body %>
+        </div>
+        <% if current_user && current_user.id == @post.user_id %>
+          <%= f.submit '更新' %>
+        <% end %>  
+      <% end %>
+    </div>
+  </div>
+</div>

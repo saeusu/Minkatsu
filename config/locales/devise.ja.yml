@@ -1,0 +1,9 @@
+# # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+ja:
+  devise:
+    failure:
+      invalid: '無効な%{authentication_keys}またはパスワードです。'
+      not_found_in_database: '無効な%{authentication_keys}またはパスワードです。'
+      timeout: 'セッションがタイムアウトしました。再度ログインしてください。'
+      unauthenticated: 'ログインしてください。'
