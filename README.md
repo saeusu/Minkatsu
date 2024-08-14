@@ -34,5 +34,4 @@
 - IDE：Cloud9
 ​
 ## 使用素材
-
-## device はbundle install
+- PAKUTASO(https://www.pakutaso.com/20230820229oneroom84s.html#google_vignette)
