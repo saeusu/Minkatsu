@@ -5,6 +5,8 @@
     </div>
         <div class="col-8">
           <br></br>
+          <p><%= link_to @post.user.name %></p>
+          <!--ユーザー詳細作る-->
           <h4><%= @post.name %></h4>
           <p><%= number_with_delimiter(@post.price) %>円</p>
           <p>アレンジ例：<%= @post.body %></p>

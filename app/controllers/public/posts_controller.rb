@@ -9,12 +9,11 @@ class Public::PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    @user = current_user
+    # @user = current_user
   end
   
   def show
-    @user = current_user
-    @post = Post.find(params[:id])
+    @post = Post.includes(:user).find(params[:id])
   end
   
   def create
@@ -49,7 +48,7 @@ class Public::PostsController < ApplicationController
   end 
   
   def destroy
-    if @post.customer_id == current_customer.id
+    if @post.user_id == current_user.id
       @post.destroy
       redirect_to posts_path
       flash[:notice] = "投稿を削除しました"

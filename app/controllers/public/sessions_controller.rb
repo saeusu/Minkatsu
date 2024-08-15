@@ -11,7 +11,8 @@ class Public::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     super do |resource|
-      flash.now[:alert] = "ログインに失敗しました" if resource.errors.any?
+      flash.now[:notice] = "新規登録が完了しました" if resource.errors.empty?
+      flash.now[:alert] = "新規登録に失敗しました" if resource.errors.any?
     end
   end
 
@@ -29,9 +30,9 @@ class Public::SessionsController < Devise::SessionsController
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
   end
   
-  # def after_sign_in_path_for(resource)
-  #   mypage_path
-  # end
+  def after_sign_in_path_for(resource)
+    mypage_path
+  end
   
   def after_sign_out_path_for(resource)
     root_path

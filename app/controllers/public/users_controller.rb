@@ -10,9 +10,12 @@ class Public::UsersController < ApplicationController
   end 
   
   def update
+    @user = current_user
     if @user.update(user_params)
-      redirect_to mypage_path, notice: '会員情報の更新が完了しました。'
+      flash[:notice] = "更新しました。"
+      redirect_to mypage_path
     else
+      flash.now[:alert] = "エラーメッセージ"
       render :edit
     end
   end 

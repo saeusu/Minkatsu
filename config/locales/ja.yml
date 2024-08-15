@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        nickname: "ニックネーム"
+        email: "メールアドレス"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "名前を入力してください"
+            nickname:
+              blank: "ニックネームを入力してください"
