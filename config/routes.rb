@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
-    sessions: "admin/sessions"
-  }
+  # devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
+  #   sessions: "admin/sessions"
+  # }
   
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
@@ -21,6 +21,19 @@ Rails.application.routes.draw do
     
     resources :posts
     
+  end
+  devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
+    sessions: "admin/sessions"
+  }
+  
+  namespace :admin do
+    get '/' => 'homes#top'
+    resources :posts
+    resources :genres, only: [:index, :create, :edit, :update]
+    resources :users, only: [:show, :edit, :update]
+  end
+    devise_scope :admin do
+    get '/admin/sign_out', to: 'admin/sessions#destroy'
   end
   
 end
