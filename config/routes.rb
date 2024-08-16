@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   
   root to: "homes#top"
   get '/about' => 'homes#about'
+  get "/search", to: "searches#search"
   
   scope module: :public do
     get 'users/mypage' => 'users#show', as:'mypage'

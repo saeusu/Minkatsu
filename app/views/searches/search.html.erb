@@ -1,0 +1,28 @@
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col'>
+      <% if @results.present? %>
+        <h4>検索結果</h4>
+        <table class='table'>
+          <% @results.each do |result| %>
+            <% if result.is_a?(User) %>
+              <tr>
+                <th>ユーザー名</th>
+                <td><%= result.name %></td>
+                <!--<td>< %= link_to '詳細', user_path(result) %></td>-->
+              </tr>
+            <% elsif result.is_a?(Post) %>
+              <tr>
+                <th>投稿名</th>
+                <td><%= result.name %></td>
+                <td><%= link_to '詳細', post_path(result), class:"btn btn-success" %></td>
+              </tr>
+            <% end %>
+          <% end %>
+        </table>
+      <% else %>
+        <p>検索結果はありません。</p>
+      <% end %>
+    </div>
+  </div>
+</div>  
