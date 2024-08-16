@@ -44,3 +44,7 @@ Post.find_or_create_by!(name: "トタンボックス") do |post|
   post.body = "靴磨きの道具をまとめて入れています。"
   post.user = 谷山太郎
 end
+
+Admin.find_or_create_by!(email: 'admin@admin.com') do |admin|
+  admin.password = 'admin12'
+end
