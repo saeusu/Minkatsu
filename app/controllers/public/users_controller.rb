@@ -1,10 +1,19 @@
 class Public::UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_current_user
+  before_action :set_current_user, except: [:show]
   
   def show
+    @user = User.find(params[:id])
+    @posts = Post.where(user_id: @user.id)
+     
+    if @user == current_user
+      redirect_to mypage_path
+    end
+  end
+  
+  def mypage
     @posts = Post.where(user_id: current_user.id)
-  end 
+  end
   
   def edit
   end 
@@ -21,6 +30,7 @@ class Public::UsersController < ApplicationController
   end 
   
   def unsubscribe
+    @user = current_user
   end 
   
   def withdraw
