@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>コメント詳細</h4>
+      <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>名前</th>
+              <th>ニックネーム</th>
+              <th>コメント</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <td><%= @comment.user.name %></td>
+                <td><%= @comment.user.nickname %></td>
+                <td><%= @comment.comment %></td>
+                <td><%= link_to '削除', admin_comment_path(@comment), method: :delete, data: { confirm: '本当に削除しますか？' }, class:"btn btn-danger" %></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>

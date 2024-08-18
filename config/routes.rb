@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :admins, skip: [:registrations, :passwords] ,controllers: {
-  #   sessions: "admin/sessions"
-  # }
-  
+  # ユーザー側
   devise_for :users,skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -25,6 +22,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
     end
   end
+  
+  # 管理者側
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"
   }
@@ -34,6 +33,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :genres, only: [:index, :create, :edit, :update]
     resources :users, only: [:show, :edit, :update]
+    resources :comments, only: [:index,:show, :destroy]
   end
     devise_scope :admin do
     get '/admin/sign_out', to: 'admin/sessions#destroy'

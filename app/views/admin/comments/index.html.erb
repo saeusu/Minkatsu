@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h4>コメント一覧</h4>
+      <br>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>名前</th>
+              <th>ニックネーム</th>
+              <th>コメント</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @comments.each do |comment| %>
+              <tr>
+                <td><%= comment.user.name %></td>
+                <td><%= comment.user.nickname %></td>
+                <td><%= comment.comment %></td>
+                <td><%= link_to "詳細表示", admin_comment_path(comment), class: "btn btn-success" %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
