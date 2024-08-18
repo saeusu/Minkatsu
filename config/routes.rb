@@ -13,15 +13,17 @@ Rails.application.routes.draw do
   get "/search", to: "searches#search"
   
   scope module: :public do
-    get 'users/mypage' => 'users#show', as:'mypage'
+    get 'users/mypage' => 'users#mypage', as:'mypage'
     get 'users/information/edit' => 'users#edit', as: 'edit_information'
     patch 'users/information' => 'users#update', as: 'update_information'
     get 'users/unsubscribe' => 'users#unsubscribe'
     put 'users/information' => 'users#update'
     patch 'users/withdraw' => 'users#withdraw', as: 'withdraw_user'
+    get 'users/:id', to: 'users#show', as: 'user'
     
-    resources :posts
-    
+    resources :posts do
+      resources :comments, only: [:create, :destroy]
+    end
   end
   devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
     sessions: "admin/sessions"

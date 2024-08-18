@@ -5,19 +5,35 @@
     </div>
         <div class="col-8">
           <br></br>
-          <p><%= link_to @post.user.name %></p>
-          <!--ユーザー詳細作る-->
-          <h4><%= @post.name %></h4>
-          <p><%= number_with_delimiter(@post.price) %>円</p>
-          <p>アレンジ例：<%= @post.body %></p>
-        </div>
-        <div>
-          <% if current_user && current_user.id == @post.user_id %>
-            <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-success" %>
-            |
-            <%= link_to '削除', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%>
-          <% end %>  
-        </div>
+          <table class="table">
+            <tr>
+              <th><%= link_to @post.user.nickname, user_path %></th>
+              <td>
+                <% if current_user && current_user.id == @post.user_id %>
+                  <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-success" %>
+                  |
+                  <%= link_to '削除', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%>
+                <% end %>
+              </td>
+            </tr>
+            <tr>
+              <th>商品名</th>
+              <td><h4><%= @post.name %></h4></td>
+            </tr>
+            <tr>
+              <th>値段</th>
+              <td><%= number_with_delimiter(@post.price) %>円</td>
+            </tr>
+            <tr>
+              <th>アレンジ例</th>
+              <td><%= @post.body %></td>
+            </tr>
+          </table>
+          <p>コメント数: <%= @post.comments.count %></p>
+          <div class="comment-index">
+            <%= render "public/comments/index", post: @post %>
+          </div>
+          <%= render "public/comments/form", post: @post, comment: @comment %>
       </div>
     </div>
   </div>
