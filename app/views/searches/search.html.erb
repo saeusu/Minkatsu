@@ -9,7 +9,7 @@
               <tr>
                 <th>ユーザー名</th>
                 <td><%= result.name %></td>
-                <!--<td>< %= link_to '詳細', user_path(result) %></td>-->
+                <td><%= link_to '詳細', user_path(result) %></td>
               </tr>
             <% elsif result.is_a?(Post) %>
               <tr>
