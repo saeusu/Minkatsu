@@ -250,7 +250,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   jbuilder (~> 2.7)
-  listen (~> 3.3)
+  listen (~> 3.3, >= 3.3.5)
   mysql2
   net-imap
   net-pop
