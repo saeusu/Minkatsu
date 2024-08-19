@@ -45,6 +45,6 @@ Post.find_or_create_by!(name: "トタンボックス") do |post|
   post.user = 谷山太郎
 end
 
-# Admin.find_or_create_by!(email: 'admin@admin.com') do |admin|
-#   admin.password = 'admin12'
-# end
+Admin.find_or_create_by!(email: ENV['ADMIN_USEREMAIL']) do |admin|
+  admin.password = ENV['ADMIN_PASSWORD']
+end
