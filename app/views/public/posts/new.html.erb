@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <h2>新規登録</h2>
+    <div class="col-10">
+      <h4>新規登録</h4>
       <% if @post.errors.any? %>
         <%= @post.errors.count %>件のエラーが発生しました
         <ul>
@@ -11,22 +11,24 @@
         </ul>
       <% end %>
       <%= form_with model: Post.new do |f| %>
-        <div>
-          <%= f.label :image, '商品画像' %>
-          <%= f.file_field :image %>
-        </div>
-        <div>
-          <%= f.label :name, '商品名' %>
-          <%= f.text_field :name %>
-        </div>  
-        <div>
-          <%= f.label :price, '金額' %>
-          <%= f.number_field :price %>円
-        </div>  
-        <div>
-          <%= f.label :body, '本文' %>
-          <%= f.text_area :body %>
-        </div>
+        <table class="table">
+          <tr>
+            <td><%= f.label :image, '商品画像' %></td>
+            <td><%= f.file_field :image %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :name, '商品名' %></td>
+            <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :price, '金額' %></td>
+            <td><%= f.number_field :price %>円</td>
+          </tr>
+          <tr>
+            <td><%= f.label :body, '本文' %></td>
+            <td><%= f.text_area :body, rows:'5', class: "w-100 comment-textarea" %></td>
+          </tr>
+        </table>
         <%= f.submit '投稿' %>
       <% end %>
     </div>
