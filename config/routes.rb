@@ -19,8 +19,10 @@ Rails.application.routes.draw do
     get 'users/:id', to: 'users#show', as: 'user'
     
     resources :posts do
+      resource :favorite, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
     end
+    resources :favorites, only: [:index]
   end
   
   # 管理者側

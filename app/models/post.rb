@@ -3,6 +3,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   validates :image, presence: true  
   validates :name, presence: true
@@ -19,6 +20,10 @@ class Post < ApplicationRecord
     else
       Post.where('name LIKE ?', '%' + content + '%')
     end
+  end
+  
+  def favorited_by?(user)
+    favorites.exists?(user_id: user.id)
   end
 
 end
