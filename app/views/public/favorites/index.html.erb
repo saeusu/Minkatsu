@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4>いいね一覧</h4>
+        <div class="row">
+          <% if @favorites.present? %>
+            <% @favorites.each do |favorite| %>
+              <div class="col-md-3">
+                  <div class="card h-100">
+                    <%= link_to post_path(favorite.post), class: "card-link" do %>
+                      <div style="max-width: 100%; max-height: 300px; overflow: hidden; position: relative;">
+                        <%= image_tag favorite.post.image, class: "card-img-top", style: "object-fit: contain; width: 100%; height: 100%; object-position: center;" %>
+                      </div>
+                      <div class="card-body">
+                        <h6 class="card-title"><%= favorite.post.name %></h6>
+                        <p class="card-text"><%= number_with_delimiter(favorite.post.price) %>円</p>
+                        <p class="card-text">
+                          いいね数：<%= favorite.post.favorites.count %><br>
+                          コメント数: <%= favorite.post.comments.count %>
+                        </p>
+                        <p class="card-text"></p>
+                      </div>
+                    <% end %>  
+                  </div>
+                </div>
+            <% end %>
+          <% else %>
+            <p>いいねした投稿はありません</p>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>

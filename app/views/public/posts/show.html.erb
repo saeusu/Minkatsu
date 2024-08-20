@@ -28,6 +28,11 @@
           <td><%= @post.body %></td>
         </tr>
       </table>
+      
+      <div class=<%= "favorite-" + @post.id.to_s %> >
+        <%= render "public/favorites/btn", post: @post %>
+      </div>
+      
       <p>コメント数: <%= @post.comments.count %></p>
       <div class="comment-index">
         <%= render "public/comments/index", post: @post %>
