@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4">
+      <%= image_tag @post.image, class: "img-fluid mb-3" %>
+    </div>
+    <div class="col-12 col-md-8">
+      <table class="table">
+        <tr>
+          <th><%= link_to @post.user.nickname, admin_user_path %></th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>商品名</th>
+          <td><h4><%= @post.name %></h4></td>
+        </tr>
+        <tr>
+          <th>値段</th>
+          <td><%= number_with_delimiter(@post.price) %>円</td>
+        </tr>
+        <tr>
+          <th>アレンジ例</th>
+          <td><%= @post.body %></td>
+        </tr>
+      </table>
+      <p>コメント数: <%= @post.comments.count %></p>
+      <div class="comment-index">
+        <%= render "public/comments/index", post: @post %>
+      </div>
+    </div>
+  </div>
+</div>
