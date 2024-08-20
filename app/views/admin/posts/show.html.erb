@@ -22,6 +22,15 @@
           <td><%= @post.body %></td>
         </tr>
       </table>
+      <div>
+        <% if @post.favorites %>
+          <i class="fas fa-heart" aria-hidden="true" style="color: red;"></i>
+            <%= @post.favorites.count %>いいね
+        <% else %>
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          <%= @post.favorites.count %>いいね
+        <% end %>
+      </div>
       <p>コメント数: <%= @post.comments.count %></p>
       <div class="comment-index">
         <%= render "admin/comments/comment", post: @post %>
