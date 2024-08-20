@@ -16,9 +16,9 @@
         
         <% elsif admin_signed_in? %>
           <li><div class="header-content"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></div></li>
-          <li><div class="header-content"><%= link_to "投稿一覧", posts_path %></div></li>
+          <li><div class="header-content"><%= link_to "会員一覧", admin_path %></di></li>
+          <li><div class="header-content"><%= link_to "投稿一覧", admin_posts_path %></div></li>
           <li><div class="header-content"><%= link_to "コメント一覧", admin_comments_path %></div></li>
-          <li><div class="header-content"><%= link_to "Minkatsuとは", about_path %></di></li>
         <% else %>
           <li><div class="header-content"><%= link_to "Minkatsuとは", about_path %></div></li>
           <li><div class="header-content"><%= link_to "新規登録", new_user_registration_path %></div></li>

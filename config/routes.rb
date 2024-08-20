@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index, :create, :edit, :update]
     resources :users, only: [:show, :edit, :update]
     resources :comments, only: [:index,:show, :destroy]
+    resources :posts, only: [:show, :index]
   end
     devise_scope :admin do
     get '/admin/sign_out', to: 'admin/sessions#destroy'
