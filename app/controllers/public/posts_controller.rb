@@ -58,8 +58,8 @@ class Public::PostsController < ApplicationController
     end
   end
   
-   private
-  # ストロングパラメータ
+  private
+  
   def post_params
     params.require(:post).permit(:name, :price, :body, :image)
   end
