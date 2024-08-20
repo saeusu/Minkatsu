@@ -24,7 +24,7 @@
       </table>
       <p>コメント数: <%= @post.comments.count %></p>
       <div class="comment-index">
-        <%= render "public/comments/index", post: @post %>
+        <%= render "admin/comments/comment", post: @post %>
       </div>
     </div>
   </div>
