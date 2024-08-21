@@ -1,7 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4><%= @user.nickname %></h4>
+      <div>
+        <h4><%= @user.nickname %></h4>
+        <% if current_user != @user %>
+          <%= render "public/relationships/btn", user: @user, options: { class: ""} %>
+        <% else %>
+          <%= link_to edit_user_path(user), class: "btn btn-success" do %>
+        <i class="fas fa-user-cog"></i>
+          <% end %>
+        <% end %>
+      </div>
        <div class="row">
         <div class="col-md">
           <p>登録情報</p>

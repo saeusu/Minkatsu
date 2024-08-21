@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <h4>フォロワー</h4>
+      <% if @users.exists? %>
+        <%= render 'public/users/index', users: @users %>
+      <% else %>
+        <p>ユーザーはいません</p>
+      <% end %>
+    </div>
+  </div>
+</div>

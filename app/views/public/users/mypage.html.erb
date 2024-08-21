@@ -23,8 +23,8 @@
             </tr>
           </table>
 
-          <!--<p>フォロー一覧  　　<　%= link_to "一覧を見る", posts_path, class:"btn btn-primary" %></p>-->
-        
+          <p>フォロー一覧  　　<%= link_to "一覧を見る", user_followings_path(@user), class:"btn btn-primary" %></p>
+          <p>フォロワー一覧  　　<%= link_to "一覧を見る", user_followers_path(@user), class:"btn btn-primary" %></p>
           <%= render "public/posts/card" %>
 
           <!--<p>いいね  　< %= link_to "一覧を見る", orders_path, class:"btn btn-primary" %></p>-->

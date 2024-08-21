@@ -18,6 +18,12 @@ Rails.application.routes.draw do
     patch 'users/withdraw' => 'users#withdraw', as: 'withdraw_user'
     get 'users/:id', to: 'users#show', as: 'user'
     
+    resources :users do
+      resource :relationships, only: [:create, :destroy], path: 'user_relationships'
+        get 'followings', to: 'relationships#followings', as: 'followings'
+        get 'followers', to: 'relationships#followers', as: 'followers'
+    end  
+      
     resources :posts do
       resource :favorite, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
