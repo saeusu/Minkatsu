@@ -32,9 +32,11 @@
       <div class=<%= "favorite-" + @post.id.to_s %> >
         <%= render "public/favorites/btn", post: @post %>
       </div>
-      
-      <p>コメント数: <%= @post.comments.count %></p>
-      <div class="comment-index">
+      <div class="comments-counter">
+        <%= render "public/comments/counter", post: @post %>
+      </div>
+
+      <div class="comments-index">
         <%= render "public/comments/index", post: @post %>
       </div>
       <%= render "public/comments/form", post: @post, comment: @comment %>
