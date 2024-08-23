@@ -10,6 +10,7 @@
               <th>ニックネーム</th>
               <th>コメント</th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -17,6 +18,7 @@
                 <td><%= @comment.user.name %></td>
                 <td><%= @comment.user.nickname %></td>
                 <td><%= @comment.comment %></td>
+                <td><%= link_to '投稿へ', admin_post_path(@comment.post.id), class:"btn btn-info" %></td>
                 <td><%= link_to '削除', admin_comment_path(@comment), method: :delete, data: { confirm: '本当に削除しますか？' }, class:"btn btn-danger" %></td>
               </tr>
           </tbody>
