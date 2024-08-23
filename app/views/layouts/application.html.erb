@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>Minkatsu</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -13,9 +13,12 @@
 
   <body>
     <%= render 'layouts/header' %>
-      <main>
+    <div class="mb-4"></div>
+      <main class="mb-auto">
         <%= yield %>
       </main>
+    <div class="mb-4"></div>  
     <%= render 'layouts/footer' %>
   </body>
 </html>
+

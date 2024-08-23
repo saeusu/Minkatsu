@@ -5,9 +5,13 @@
       <img src="<%= image_path 'about2.jpg' %>" class="img-fluid" alt="お部屋を快適に">
       <div class="btn-wrapper col-10 mx-auto text-center">
         <div class="row">
-          <%= link_to "新規登録", new_user_registration_path, class:"btn btn-primary mx-auto" %>
-     
-          <%= link_to "ログイン", new_user_session_path, class:"btn btn-success mx-auto" %>
+          <div class="btn btn-flat">
+            <span><%= link_to "新規登録", new_user_registration_path, class:"btn btn-flat mx-auto" %></span>
+          </div>
+          　
+          <div class="btn btn-flat">
+            <span><%= link_to "ログイン", new_user_session_path, class:"btn btn-flat mx-auto" %></span>
+          </div>
         </div>
       </div> 
     </div>

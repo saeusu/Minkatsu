@@ -8,12 +8,29 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-          <li><div class="header-content"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></div></li>
-          <li><div class="header-content"><%= link_to "新規投稿", new_post_path %></div></li>
+        
           <li><div class="header-content"><%= link_to "Minkatsuとは", about_path %></div></li>
           <li><div class="header-content"><%= link_to "投稿一覧", posts_path %></div></li>
-          <li><div class="header-content"><%= link_to "いいね一覧", favorites_path %></div></li>
-          <li><div class="header-content"><%= link_to "mypage", mypage_path %></div></li>
+          
+          <div class="pl-1"></div>
+            <li class="dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-regular fa-circle-user" style="font-size: 21px, color:white;"></i>
+              </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="dropdown-item btn-sm">
+                <i class="fa-solid fa-user"></i>　<%= link_to "mypage", mypage_path %>
+              </div>
+            <div class="dropdown-divider"></div>
+              <div class="dropdown-item btn-sm">
+                <i class="fa-solid fa-heart"></i>　<%= link_to "いいね一覧", favorites_path %>
+              </div>  
+            <div class="dropdown-divider"></div>
+              <div class="dropdown-item btn-sm">
+                <i class="fa-solid fa-right-from-bracket"></i>　<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </div>
+          </div>
+          
         
         <% elsif admin_signed_in? %>
           <li><div class="header-content"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></div></li>
@@ -22,10 +39,29 @@
           <li><div class="header-content"><%= link_to "コメント一覧", admin_comments_path %></div></li>
         <% else %>
           <li><div class="header-content"><%= link_to "Minkatsuとは", about_path %></div></li>
-          <li><div class="header-content"><%= link_to "新規登録", new_user_registration_path %></div></li>
-          <li><div class="header-content"><%= link_to "ログイン", new_user_session_path %></div></li>
+          
+          
+          <div class="pl-1"></div>
+            <li class="dropdown">
+              <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-regular fa-circle-user" style="font-size: 21px, color:white;"></i>
+              </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="dropdown-item btn-sm">
+                <i class="fa-solid fa-clipboard-user"></i>　<%= link_to "新規登録", new_user_registration_path %>
+              </div>
+            <div class="dropdown-divider"></div>
+              <div class="dropdown-item btn-sm">
+                <i class="fa-solid fa-right-to-bracket"></i>　<%= link_to "ログイン", new_user_session_path %>
+              </div>
+          </div>  
+          
+
+            
+            
+            
         <% end %>
-          <%= render "searches/form" %>
+          
         </ul>
       </div>
     </div>
