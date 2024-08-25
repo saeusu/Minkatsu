@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-10">
+    <div class="col-12 col-md-12">
       <h4>新規登録</h4>
       <% if @post.errors.any? %>
-        <%= @post.errors.count %>件のエラーが発生しました
-        <ul>
-          <% @post.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+        <div class="alert alert-danger">
+          <%= @post.errors.count %>件のエラーが発生しました
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
       <%= form_with model: Post.new do |f| %>
         <table class="table">
