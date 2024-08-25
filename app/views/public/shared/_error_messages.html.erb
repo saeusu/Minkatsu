@@ -1,49 +1,22 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-turbo-cache="false">
-    <h2>
-      <%= resource.errors.count %>件のエラーが発生しました
-    </h2>
+  <div class="alert alert-danger">
+    <h5><%= pluralize(resource.errors.count, '件エラー') %>が発生しました</h5>
     <ul>
       <% resource.errors.each do |attribute, message| %>
-      <% if attribute == :name %>
-        <% if resource.errors.include?(:name) %>
+        <% if attribute == :name && resource.errors.include?(:name) %>
           <li>名前を入力してください</li>
-        <% end %>
-      <% end %>
-    <% end %>
-    <% resource.errors.each do |attribute, message| %>
-      <% if attribute == :nickname %>
-        <% if resource.errors.include?(:nickname) %>
+        <% elsif attribute == :nickname && resource.errors.include?(:nickname) %>
           <li>ニックネームを入力してください</li>
-        <% end %>  
-      <% end %>
-    <% end %>
-    <% resource.errors.each do |attribute, message| %>
-      <% if attribute == :email %>
-        <% if resource.errors.include?(:email) %>
+        <% elsif attribute == :email && resource.errors.include?(:email) %>
           <li>メールアドレスを入力してください</li>
-        <% end %>
-      <% end %>
-    <% end %>
-    <% resource.errors.each do |attribute, message| %>
-      <% if attribute == :password %>
-        <% if resource.errors.include?(:password) %>
+        <% elsif attribute == :password && resource.errors.include?(:password) %>
           <li>パスワードを６文字以上で入力してください</li>
-        <% end %>
-      <% end %>
-    <% end %>
-    <% resource.errors.each do |attribute, message| %>
-      <% if attribute == :password_confirmation %>
-        <% if resource.errors.include?(:password_confirmation) %>
+        <% elsif attribute == :password_confirmation && resource.errors.include?(:password_confirmation) %>
           <li>上記と同じパスワードを入力してください</li>
+        <% else %>
+          <li><%= message %></li>
         <% end %>
       <% end %>
-    <% end %>
-    <% resource.errors.each do |attribute, message| %>
-      <% unless [:name, :nickname, :email, :password, :password_confirmation].include?(attribute) %>
-        <li><%= message %></li>
-      <% end %>
-    <% end %>
     </ul>
   </div>
 <% end %>

@@ -28,6 +28,7 @@
 
 .table {
   position: center;
+  margin-top: 10px;
   background-color: #F6DCAC;
 }
 
@@ -60,6 +61,7 @@ h4 {
   color: #01204E;
   border-bottom: 3px dashed #000;
   border-color: #FEAE6F;
+  margin-bottom: 0;
 }
 
 .btn,
@@ -125,6 +127,18 @@ div.btn-flat:hover:before {
   background-color: #FEAE6F;
   color: white;
   border-color: #FEAE6F;
+}
+
+.button {
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+.alert {
+  margin: 10px;
+  padding-bottom: 0px;
+  padding-right: 0px;
 }
 
 // a:link {

@@ -23,9 +23,9 @@ class Public::PostsController < ApplicationController
       @post.name = ""
       @post.price = ""
       @post.body = ""
-      redirect_to post_path(@post), notice: "You have created book successfully."
+      flash[:notice] = "投稿が成功しました"
+      redirect_to post_path(@post)
     else
-      # @user = current_user
       @posts = Post.all
       render :new
     end
@@ -33,20 +33,24 @@ class Public::PostsController < ApplicationController
   
   def edit
     @post = Post.find(params[:id])
+
   end
   
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
+      puts "更新に成功しました"
       @post.name = ""
       @post.price = ""
       @post.body = ""
-      redirect_to post_path(@post.id), notice: "You have updated book successfully."
+      flash[:notice] = "編集が成功しました"
+      redirect_to post_path(@post.id)
     else
+      puts "更新に失敗しました"
       render :edit
     end
-  end 
-  
+  end
+
   def destroy
     if @post.user_id == current_user.id
       @post.destroy

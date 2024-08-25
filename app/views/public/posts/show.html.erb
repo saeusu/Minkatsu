@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-4">
-      <%= image_tag @post.image, class: "img-fluid mb-3" %>
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <%= image_tag @post.image, class: "img-fluid mb-3", style: "margin-top: 10px;" %>
     </div>
     <div class="col-12 col-md-8">
       <table class="table">
@@ -17,7 +22,7 @@
         </tr>
         <tr>
           <th>商品名</th>
-          <td><h4><%= @post.name %></h4></td>
+          <td><h5><%= @post.name %></h5></td>
         </tr>
         <tr>
           <th>値段</th>
