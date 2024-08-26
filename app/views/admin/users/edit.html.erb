@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h4><%= @user.name %>さんの会員情報編集</h4>
+      <h4 class="underline"><%= @user.name %>さんの会員情報編集</h4>
     <%= form_with model: @user,url: admin_user_path(@user) do |f| %>
       <table class="table table-borderless">
         <tr>

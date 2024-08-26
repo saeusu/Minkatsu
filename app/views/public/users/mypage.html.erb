@@ -1,17 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h4><%= @user.name %>さんのマイページ</h4>
+      <h4 class="underline mt-2"><%= @user.name %>さんのマイページ</h4>
+
+      
         <% if flash[:notice] %>
           <div class="alert alert-success">
             <%= flash[:notice] %>
           </div>
         <% end %>
-      <p>
-        
-        <%= link_to "フォロー", user_followings_path(@user), class:"btn btn-outline" %>  
-        <%= link_to "フォロワー", user_followers_path(@user), class:"btn btn-primary" %>
-      </p>
+        <div class="row m-2">
+          <%= link_to "フォロー", user_followings_path(@user), class:"btn btn-primary mr-2" %>  
+          <%= link_to "フォロワー", user_followers_path(@user), class:"btn btn-primary" %>
+        </div>
+
        <div class="row">
         <div class="col-12 col-md-12">
           <p>登録情報  <%= link_to "編集する", edit_information_path %></p>
@@ -31,9 +33,11 @@
             </table>
         </div>
       </div>
-          <h4>投稿一覧</h4>
-          <%= render "public/posts/card", posts: @posts %>
-
+      
+      <h4 class="underline">投稿一覧</h4>
+      <div class="row mt-2">
+        <%= render "public/posts/card", posts: @posts %>
+      </div>
           <!--<p>いいね  　< %= link_to "一覧を見る", orders_path, class:"btn btn-primary" %></p>-->
     </div>
   </div>

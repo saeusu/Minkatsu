@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h4>いいね一覧</h4>
-        <div class="row">
+      <h4 class="underline mt">いいね一覧</h4>
+        <div class="row mt-2">
           <% if @favorites.present? %>
             <% @favorites.each do |favorite| %>
-              <div class="col-md-3">
+              <div class="col-md-3 mb-3">
                   <div class="card h-100">
                     <%= link_to post_path(favorite.post), class: "card-link" do %>
                       <div style="max-width: 100%; max-height: 300px; overflow: hidden; position: relative;">
@@ -30,7 +30,9 @@
                 </div>
             <% end %>
           <% else %>
-            <p>いいねした投稿はありません</p>
+            <div class="ml-3">
+              <p>いいねした投稿はありません</p>
+            </div>
           <% end %>
       </div>
     </div>
