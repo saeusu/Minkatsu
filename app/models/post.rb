@@ -6,10 +6,10 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  # validates :image, presence: true  
-  # validates :name, presence: true
-  # validates :body, presence: true
-  # validates :price, presence: true
+  validates :image, presence: true  
+  validates :name, presence: true
+  validates :body, presence: true
+  validates :price, presence: true
   
   def self.search_for(content, method)
     if method == 'perfect'
