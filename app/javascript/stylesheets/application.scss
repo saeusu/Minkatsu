@@ -1,22 +1,11 @@
 @use '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap');
 
-.header-content {
-  margin-right: 10px; /* 右側に10pxの余白を追加 */
-}
-
-.header-content a {
-  color: white; /* 文字の色を白に変更 */
-}
-
-.header a {
-  color: black; /* 文字の色を白に変更 */
-}
-
-.dropdown {
-  position: relative;
-  top: -7px;
-}
+// .img_tag {
+//   width: 250px;
+//   height: 250px;
+//   object-fit: cover; /* この一行を追加するだけ！ */
+// }
 
 .dropdown a {
   color: #01204E;
@@ -57,7 +46,7 @@ html {
   box-sizing: border-box;
 }
 
-h4 {
+.underline {
   color: #01204E;
   border-bottom: 3px dashed #000;
   border-color: #FEAE6F;
@@ -133,6 +122,10 @@ div.btn-flat:hover:before {
   display: inline-block;
   font-size: 12px;
   margin-bottom: 0;
+}
+
+.btn-outline {
+  
 }
 
 .alert {

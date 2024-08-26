@@ -1,26 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h4>投稿一覧
-        <p class="button">
+      
+      <div class="d-flex justify-content-between underline mt-2">
+        <div>
+          <h4>
+            投稿一覧
+          </h4>
+        </div>
+        <div>
           <%= link_to new_post_path, class: "btn btn-primary btn-sm" do %>
              <i class="fa-solid fa-circle-plus"></i>新規投稿
           <% end %>
-         </p>
-      </h4>
+        </div>
+      </div>
+      
       <% if flash[:notice] %>
         <div class="alert alert-success">
           <%= flash[:notice] %>
         </div>
       <% end %>
       
-      <div class="row justify-content-end">
+
+      
+      <div class="row my-2 justify-content-end">
         <div class="col-md-4">
           <%= render "searches/form" %>
         </div>
       </div>
       <div class="row">
-        <%= render "public/posts/card" %>
+        <%= render "public/posts/card", posts: @posts %>
       </div>
     </div>
   </div>

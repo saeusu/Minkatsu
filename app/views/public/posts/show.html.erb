@@ -11,7 +11,7 @@
     <div class="col-12 col-md-8">
       <table class="table">
         <tr>
-          <th><%= link_to @post.user.nickname, user_path %></th>
+          <th><%= link_to @post.user.nickname, user_path(@post.user_id) %></th>
           <td>
             <% if current_user && current_user.id == @post.user_id %>
               <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-success" %>
@@ -27,6 +27,10 @@
         <tr>
           <th>値段</th>
           <td><%= number_with_delimiter(@post.price) %>円</td>
+        </tr>
+        <tr>
+          <th>ジャンル</th>
+          <td><%= @post.genre.name %></td>
         </tr>
         <tr>
           <th>アレンジ例</th>

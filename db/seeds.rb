@@ -24,11 +24,16 @@ end
   user.password = "password"
 end
 
+Genre.find_or_create_by!(name: "収納")
+Genre.find_or_create_by!(name: "掃除")
+Genre.find_or_create_by!(name: "キッチン")
+
 Post.find_or_create_by!(name: "コットンボックス") do |post|
   post.image = ActiveStorage::Blob.create_and_upload!(io: File.open("#{Rails.root}/db/fixtures/sample-post1.jpg"), filename:"sample-post1.jpg")
   post.price = "690"
   post.body = "タオル収納として使っています。"
   post.user = 田中花子
+  post.genre = Genre.find_by(name: "収納")
 end
 
 Post.find_or_create_by!(name: "取っ手付きボックス") do |post|
@@ -36,6 +41,7 @@ Post.find_or_create_by!(name: "取っ手付きボックス") do |post|
   post.price = "2490"
   post.body = "取っ手があるので高いところでも取りやすいです。トイレで使ってます。"
   post.user = 山田令子
+  post.genre = Genre.find_by(name: "収納")
 end
 
 Post.find_or_create_by!(name: "トタンボックス") do |post|
@@ -43,6 +49,7 @@ Post.find_or_create_by!(name: "トタンボックス") do |post|
   post.price = "1990"
   post.body = "靴磨きの道具をまとめて入れています。"
   post.user = 谷山太郎
+  post.genre = Genre.find_by(name: "収納")
 end
 
 Admin.find_or_create_by!(email: ENV['ADMIN_USEREMAIL']) do |admin|

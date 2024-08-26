@@ -9,7 +9,6 @@ class Public::PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.all
-    # @user = current_user
   end
   
   def show
@@ -22,7 +21,9 @@ class Public::PostsController < ApplicationController
     if @post.save
       @post.name = ""
       @post.price = ""
+      
       @post.body = ""
+      @post.genre.name = ""
       flash[:notice] = "投稿が成功しました"
       redirect_to post_path(@post)
     else
@@ -65,7 +66,7 @@ class Public::PostsController < ApplicationController
   private
   
   def post_params
-    params.require(:post).permit(:name, :price, :body, :image)
+    params.require(:post).permit(:name, :price, :body, :image, :genre_id)
   end
   
   def ensure_correct_user

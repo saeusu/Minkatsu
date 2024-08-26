@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-12">
-      <h4>新規登録</h4>
+    <div class="col-12">
+      <h4 class="underline mt-2">新規投稿</h4>
       <% if @post.errors.any? %>
         <div class="alert alert-danger">
           <%= @post.errors.count %>件のエラーが発生しました
@@ -12,7 +12,7 @@
           </ul>
         </div>
       <% end %>
-      <%= form_with model: Post.new do |f| %>
+      <%= form_with model: @post do |f| %>
         <table class="table">
           <tr>
             <td><%= f.label :image, '商品画像' %></td>
@@ -21,6 +21,10 @@
           <tr>
             <td><%= f.label :name, '商品名' %></td>
             <td><%= f.text_field :name %></td>
+          </tr>
+          <tr>
+            <td><%= f.label :genre, 'ジャンル' %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: true %></td>
           </tr>
           <tr>
             <td><%= f.label :price, '金額' %></td>
