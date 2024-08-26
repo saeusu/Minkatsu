@@ -30,7 +30,7 @@ Post.find_or_create_by!(name: "コットンボックス") do |post|
   post.price = "690"
   post.body = "タオル収納として使っています。"
   post.user = 田中花子
-  post.genre = genre if genre # ジャンルが見つかった場合のみ代入する
+  post.genre.name = genre if genre # ジャンルが見つかった場合のみ代入する
 end
 
 genre = Genre.find_by(name: "収納") # ジャンル名で検索します
@@ -39,7 +39,7 @@ Post.find_or_create_by!(name: "取っ手付きボックス") do |post|
   post.price = "2490"
   post.body = "取っ手があるので高いところでも取りやすいです。トイレで使ってます。"
   post.user = 山田令子
-  post.genre = genre if genre # ジャンルが見つかった場合のみ代入する
+  post.genre.name = genre if genre # ジャンルが見つかった場合のみ代入する
 end
 
 genre = Genre.find_by(name: "収納") # ジャンル名で検索します
@@ -48,7 +48,7 @@ Post.find_or_create_by!(name: "トタンボックス") do |post|
   post.price = "1990"
   post.body = "靴磨きの道具をまとめて入れています。"
   post.user = 谷山太郎
-  post.genre = genre if genre # ジャンルが見つかった場合のみ代入する
+  post.genre.name = genre if genre # ジャンルが見つかった場合のみ代入する
 end
 
 Genre.find_or_create_by!(name: "収納")

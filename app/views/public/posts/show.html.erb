@@ -29,6 +29,10 @@
           <td><%= number_with_delimiter(@post.price) %>円</td>
         </tr>
         <tr>
+          <th>ジャンル</th>
+          <td><%= @post.genre.name %></td>
+        </tr>
+        <tr>
           <th>アレンジ例</th>
           <td><%= @post.body %></td>
         </tr>
