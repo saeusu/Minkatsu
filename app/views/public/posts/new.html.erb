@@ -23,6 +23,10 @@
             <td><%= f.text_field :name %></td>
           </tr>
           <tr>
+            <td><%= f.label :genre, 'ジャンル' %></td>
+            <td><%= f.collection_select :genre_id, Genre.all, :id, :name, include_blank: true %></td>
+          </tr>
+          <tr>
             <td><%= f.label :price, '金額' %></td>
             <td><%= f.number_field :price %>円</td>
           </tr>
