@@ -2,14 +2,17 @@
   <div class="row">
     <div class="col">
       <h4 class="underline mt-2">ログイン</h4>
-        <% if notice %>
-         <p class="notice"><%= notice %></p>
-        <% end %>
-        <% if alert %>
+        
+        <% if flash[:notice] %>
+          <div class="alert alert-success">
+            <%= flash[:notice] %>
+          </div>
+        <% elsif flash[:alert] %>
           <div class="alert alert-danger">
-            <p><%= alert %></p>
+            <%= flash[:alert] %>
           </div>
         <% end %>
+      
       <%= form_with model: @user, url: user_session_path do |f| %>
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
