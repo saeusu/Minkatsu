@@ -53,10 +53,6 @@ class Public::UsersController < ApplicationController
     end
   end
   
-  def guest_user?
-    email == GUEST_USER_EMAIL
-  end
-  
   def user_params
     params.require(:user).permit(:name, :nickname, :email, :password)
   end 

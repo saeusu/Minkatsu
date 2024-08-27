@@ -26,6 +26,12 @@ class Public::SessionsController < Devise::SessionsController
 
   # If you have extra params to permit, append them to the sanitizer.
   
+  def guest_sign_in
+    user = User.guest
+    sign_in user
+    redirect_to mypage_path, notice: "guestuserでログインしました。"
+  end
+
   def configure_sign_in_params
     devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
   end
