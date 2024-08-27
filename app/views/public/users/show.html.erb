@@ -24,11 +24,9 @@
         <%= link_to "フォロワー", user_followers_path(@user), class:"btn btn-primary" %>
       </div>
 
-      <div class="row">
-        <div class="col-md">
+        <div class="row mt-2">
           <%= render "public/posts/card", posts: @posts %>
         </div>
-      </div>
       
     </div>
   </div>
