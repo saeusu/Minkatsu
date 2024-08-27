@@ -3,20 +3,17 @@
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 text-center">
       <h2>Minkatsu</h2>
       <img src="<%= image_path 'about2.jpg' %>" class="img-fluid" alt="お部屋を快適に">
-      <div class="col-10 mx-auto text-center">
+      <div class="d-flex justify-content-around">
         <div class="row">
           <div class="btn btn-flat">
-            <span><%= link_to "新規登録", new_user_registration_path, class:"btn btn-flat mx-auto" %></span>
+            <span><%= link_to "新規登録", new_user_registration_path, class:"btn btn-flat mr-2" %></span>
           </div>
           　
           <div class="btn btn-flat">
-            <span><%= link_to "ログイン", new_user_session_path, class:"btn btn-flat mx-auto" %></span>
-          </div>
-          <div class="row">
-            <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-secondary btn-sm btn-block mb-3 sign_in", method: :post %>
+            <span><%= link_to "ログイン", new_user_session_path, class:"btn btn-flat mr-2" %></span>
           </div>
           <div class="btn btn-flat">
-            <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, class: "btn btn-flat mx-auto sign_in", method: :post %>
+            <span><%= link_to "ゲストログイン", users_guest_sign_in_path, class: "btn btn-flat sign_in", method: :post %></span>
           </div>
         </div>
       </div> 

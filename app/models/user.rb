@@ -65,6 +65,6 @@ class User < ApplicationRecord
     end
   end
  
-  # validates :name, presence: true
-  # validates :nickname, presence: true
+  validates :name, presence: true
+  validates :nickname, presence: true
 end
