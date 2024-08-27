@@ -1,4 +1,7 @@
 <% posts.each do |post| %>
+  <% if post.user && post.user.is_deleted? %>
+    <% next %>
+  <% end %>
   <div class="col-md-3 mb-3">
     <div class="card h-100">
       <%= link_to post_path(post), class: "card-link" do %>
@@ -23,3 +26,4 @@
     </div>
   </div>
 <% end %>
+
