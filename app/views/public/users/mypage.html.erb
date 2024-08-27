@@ -13,10 +13,16 @@
           <%= link_to "フォロー", user_followings_path(@user), class:"btn btn-primary mr-2" %>  
           <%= link_to "フォロワー", user_followers_path(@user), class:"btn btn-primary" %>
         </div>
+        
 
+        
        <div class="row">
         <div class="col-12 col-md-12">
-          <p>登録情報  <%= link_to "編集する", edit_information_path %></p>
+          <% if @user.email != "guest@example.com" %>
+            <p>登録情報  <%= link_to "編集する", edit_information_path %></p>
+          <% end %>
+          
+          
             <table class="table">
               <tr>
                 <td style="width: 30%; padding-left: 20px;">名前</td>
