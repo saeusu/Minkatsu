@@ -54,9 +54,7 @@ html {
 }
 
 .btn,
-a.btn,
 button.btn {
-  // font-size: 1.6rem;
   font-weight: 700;
   // line-height: 1.5;
   position: relative;
@@ -74,12 +72,12 @@ button.btn {
   text-decoration: none;
   letter-spacing: 0.1em;
   color: #fff;
+  // background-color: #01204E;
   border-radius: 0.5rem;
 }
 
 div.btn-flat {
   overflow: hidden;
-  // padding: 1.5rem 6rem;
   color: #fff;
   border-radius: 0;
   background: #01204E;
@@ -122,10 +120,6 @@ div.btn-flat:hover:before {
   display: inline-block;
   font-size: 12px;
   margin-bottom: 0;
-}
-
-.btn-outline {
-  
 }
 
 .alert {
