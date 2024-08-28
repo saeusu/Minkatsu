@@ -25,13 +25,18 @@
         </div>
       <% end %>
       
-
-      
-      <div class="row my-2 justify-content-end">
-        <div class="col-md-4">
+      <div class="d-flex justify-content-end my-2">
+        <div class="mr-2">
+          <%= form_with(url: posts_path, method: :get, class: "form-inline") do |f| %>
+            <%= f.select(:genre_id, options_for_select([["すべて", ""]].concat(Genre.all.map { |g| [g.name, g.id] })), {selected: params[:genre_id]}, class: "form-control mr-2") %>
+            <%= f.submit("絞り込み", class: "btn btn-primary") %>
+          <% end %>
+        </div>
+        <div>
           <%= render "searches/form" %>
         </div>
       </div>
+      
       <div class="row">
         <%= render "public/posts/card", posts: @posts %>
       </div>

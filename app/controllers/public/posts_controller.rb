@@ -9,7 +9,11 @@ class Public::PostsController < ApplicationController
   
   def index
     @post = Post.new
-    @posts = Post.all
+    if params[:genre_id].present?
+      @posts = Post.where(genre_id: params[:genre_id])
+    else
+      @posts = Post.all
+    end
   end
   
   def show
