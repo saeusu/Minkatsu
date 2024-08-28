@@ -26,8 +26,8 @@ class Public::RelationshipsController < ApplicationController
   
 private  
   def ensure_guest_user
-    @user = User.find(params[:user_id])
-    unless @user.email == "guest@example.com"
+    # current_user がゲストユーザーの場合のみ制限する
+    if current_user.email == "guest@example.com"
       redirect_to mypage_path, alert: "ゲストユーザーはフォローできません。会員登録をしてください。"
     end
   end
