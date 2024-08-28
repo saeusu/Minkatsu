@@ -24,7 +24,21 @@
 架空の商品の活用方法を共有していくサイトです。
 ​
 ## 設計書
-「後ほど作成予定」
+- ER図
+  ![Minkatsu_ER図 drawio](https://github.com/user-attachments/assets/64fff7d0-98af-4327-bb34-dec2ee5c4e5e)
+
+- 画面遷移図
+  ![Minkatsu_UIFlows_ drawio](https://github.com/user-attachments/assets/cdee272c-0954-43d1-bd26-503332c5a6e1)
+
+
+- アプリケーション詳細設計:(https://docs.google.com/spreadsheets/d/1c7y2gMjikHUbAWBlEJT8U8jZn-dryq8msB4_TSfF4wc/edit?usp=sharing)
+- テーブル定義書:(https://docs.google.com/spreadsheets/d/1iCeHmS1Pz1KJW8GqEMR2qjZwD_xMrSX3eG2HNu7w5Bg/edit?usp=sharing)
+
+## 機能一覧
+| 機能名 | 説明 | 非ログイン時利用可否 |
+| ---- | :---: | :---: |
+| ログイン機能 | TD |
+| TD | TD |
 ​
 ## 開発環境
 - OS：Linux(CentOS)
