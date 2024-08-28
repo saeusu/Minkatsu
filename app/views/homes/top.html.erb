@@ -10,15 +10,21 @@
       <img src="<%= image_path 'about2.jpg' %>" class="img-fluid" alt="お部屋を快適に">
       <div class="d-flex justify-content-around mt-2">
         <div class="row">
-          <div class="btn btn-flat">
-            <span><%= link_to "新規登録", new_user_registration_path, class:"btn btn-flat" %></span>
+          <div>
+            <%= link_to new_user_registration_path, class:"btn btn-flat" do %>
+              <span>新規登録</span>
+            <% end %>
           </div>
           　
-          <div class="btn btn-flat mr-3">
-            <span><%= link_to "ログイン", new_user_session_path, class:"btn btn-flat" %></span>
+          <div class="mr-3">
+            <%= link_to new_user_session_path, class:"btn btn-flat" do %>
+              <span>ログイン</span>
+            <% end %>
           </div>
-          <div class="btn btn-flat">
-            <span><%= link_to "ゲストログイン", users_guest_sign_in_path, class: "btn btn-flat sign_in", method: :post %></span>
+          <div>
+            <%= link_to users_guest_sign_in_path, class: "btn btn-flat sign_in", method: :post do %>
+              <span>ゲストログイン</span>
+            <% end %>
           </div>
         </div>
       </div> 

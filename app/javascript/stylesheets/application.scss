@@ -71,22 +71,22 @@ button.btn {
   text-decoration: none;
   letter-spacing: 0.1em;
   color: #fff;
-  // background-color: #01204E;
+  background-color: #01204E;
   border-radius: 0.5rem;
 }
 
-div.btn-flat {
+.btn-flat {
   overflow: hidden;
   color: #fff;
   border-radius: 0;
   background: #01204E;
 }
 
-div.btn-flat span {
+.btn-flat span {
   position: relative;
 }
 
-div.btn-flat:before {
+.btn-flat:before {
   position: absolute;
   top: 0;
   left: 0;
@@ -100,10 +100,14 @@ div.btn-flat:before {
   background: #FEAE6F;
 }
 
-div.btn-flat:hover:before {
+.btn-flat:hover:before {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
+
+
+
+
 
 // .form.button {
 //   background-color: #FEAE6F;
