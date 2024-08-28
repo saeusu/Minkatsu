@@ -24,6 +24,7 @@
         <%= link_to "フォロワー", user_followers_path(@user), class:"btn btn-primary" %>
       </div>
 
+        <h4 class="underline">投稿一覧</h4>
         <div class="row mt-2">
           <%= render "public/posts/card", posts: @posts %>
         </div>
