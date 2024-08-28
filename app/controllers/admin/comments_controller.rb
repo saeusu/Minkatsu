@@ -1,11 +1,12 @@
 class Admin::CommentsController < ApplicationController
   before_action :authenticate_admin!
-  def index
-    @comments = Comment.includes(:user).all
-  end
   
   def show
     @comment = Comment.find(params[:id])
+  end
+  
+  def index
+    @comments = Comment.includes(:user).all
   end
   
   def destroy
@@ -15,6 +16,7 @@ class Admin::CommentsController < ApplicationController
   end
   
   private
+  
   def comment_params
     params.require(:comment).permit(:comment)
   end

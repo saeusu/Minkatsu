@@ -7,6 +7,10 @@ class Public::PostsController < ApplicationController
     @post = Post.new
   end
   
+  def show
+    @post = Post.includes(:user).find(params[:id])
+  end  
+  
   def index
     @post = Post.new
     if params[:genre_id].present?
@@ -14,10 +18,6 @@ class Public::PostsController < ApplicationController
     else
       @posts = Post.all
     end
-  end
-  
-  def show
-    @post = Post.includes(:user).find(params[:id])
   end
   
   def create
@@ -45,14 +45,12 @@ class Public::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      puts "更新に成功しました"
       @post.name = ""
       @post.price = ""
       @post.body = ""
       flash[:notice] = "編集が成功しました"
       redirect_to post_path(@post.id)
     else
-      puts "更新に失敗しました"
       render :edit
     end
   end
@@ -62,9 +60,6 @@ class Public::PostsController < ApplicationController
       @post.destroy
       redirect_to posts_path
       flash[:notice] = "投稿を削除しました"
-    else
-      redirect_to posts_path
-      flash[:alert] = "他人の投稿は削除できません"
     end
   end
   

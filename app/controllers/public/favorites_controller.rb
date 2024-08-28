@@ -1,5 +1,5 @@
 class Public::FavoritesController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
   before_action :ensure_guest_user, only: [:index, :create, :update]
 
   
@@ -33,7 +33,7 @@ class Public::FavoritesController < ApplicationController
     end  
   end
   
-private
+  private
 
   def ensure_guest_user
     redirect_guest_user if guest_user?

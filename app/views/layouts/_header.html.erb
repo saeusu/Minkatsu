@@ -5,10 +5,10 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
-        
           <li class="nav-item"><%= link_to "Minkatsuとは", about_path, class: 'nav-link text-white mr-2' %></li>
           <li class="nav-item"><%= link_to "投稿一覧", posts_path, class: 'nav-link text-white' %></li>
           
@@ -30,7 +30,6 @@
                 <i class="fa-solid fa-right-from-bracket"></i>　<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
               </div>
           </div>
-          
         
         <% elsif admin_signed_in? %>
           <li class="nav-item"><%= link_to "会員一覧", admin_path, class: 'nav-link text-white' %></li>
@@ -39,6 +38,7 @@
           <li class="nav-item"><%= link_to "コメント一覧", admin_comments_path, class: 'nav-link text-white' %></li>
           <li class="nav-item"><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link text-white' %></li>
         <% else %>
+        
           <li class="nav-item"><%= link_to "Minkatsuとは", about_path, class: 'nav-link text-white' %></li>
           
           <div class="pl-1"></div>

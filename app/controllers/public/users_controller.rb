@@ -6,7 +6,6 @@ class Public::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id)
-     
     if @user == current_user
       redirect_to mypage_path
     end
@@ -15,9 +14,6 @@ class Public::UsersController < ApplicationController
   def mypage
     @posts = Post.where(user_id: current_user.id)
   end
-  
-  def edit
-  end 
   
   def update
     @user = current_user
@@ -41,6 +37,10 @@ class Public::UsersController < ApplicationController
   end
   
   private
+
+  def user_params
+    params.require(:user).permit(:name, :nickname, :email, :password)
+  end
   
   def set_current_user
     @user = current_user
@@ -52,7 +52,5 @@ class Public::UsersController < ApplicationController
     end
   end
   
-  def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password)
-  end 
+ 
 end
