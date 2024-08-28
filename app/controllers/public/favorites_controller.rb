@@ -4,7 +4,6 @@ class Public::FavoritesController < ApplicationController
 
   
   def index
-   
     if guest_user?
       redirect_guest_user
     else
