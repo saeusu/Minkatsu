@@ -30,7 +30,7 @@
         </tr>
         <tr>
           <th>ジャンル</th>
-          <td><%= @post.genre.name %></td>
+          <td><%= @post.genre.name if @post.genre %></td>
         </tr>
         <tr>
           <th>アレンジ例</th>
