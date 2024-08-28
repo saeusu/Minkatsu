@@ -15,7 +15,7 @@
           <td>
             <% if current_user && current_user.id == @post.user_id %>
               <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-success" %>
-              |
+              <%= " " %>
               <%= link_to '削除', @post, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%>
             <% end %>
           </td>
