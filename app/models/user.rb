@@ -39,16 +39,14 @@ class User < ApplicationRecord
       "有効"
     end
   end
-  
-  
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com', name: "guest") do |user|
       user.password = SecureRandom.urlsafe_base64
+      user.nickname = "Guest" # 修正: nicknameを設定
     end
   end
-  
-           
+
   def active_for_authentication?
     super && (is_deleted == false)
   end
@@ -64,7 +62,7 @@ class User < ApplicationRecord
       User.where('name LIKE ?', '%' + content + '%')
     end
   end
- 
+
   validates :name, presence: true
-  validates :nickname, presence: true
+  validates :nickname, presence: true # nicknameに対するバリデーションが原因
 end
