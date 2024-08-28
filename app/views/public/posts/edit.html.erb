@@ -43,7 +43,7 @@
           </tr>
         </table>
         <% if current_user && current_user.id == @post.user_id %>
-          <%= f.submit '更新' %>
+          <%= f.submit '更新', class:"btn btn-success" %>
         <% end %>  
       <% end %>
     </div>
