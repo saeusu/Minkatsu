@@ -2,27 +2,33 @@
   <div class="row">
     <div class="col">
       <h4 class="underline mt-2">コメント詳細</h4>
-      <br>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>名前</th>
-              <th>ニックネーム</th>
-              <th>コメント</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td><%= @comment.user.name %></td>
-                <td><%= @comment.user.nickname %></td>
-                <td><%= @comment.comment %></td>
-                <td><%= link_to '投稿へ', admin_post_path(@comment.post.id), class:"btn btn-info" %></td>
-                <td><%= link_to '削除', admin_comment_path(@comment), method: :delete, data: { confirm: '本当に削除しますか？' }, class:"btn btn-danger" %></td>
-              </tr>
-          </tbody>
-        </table>
+      <table class="table mt-2">
+        <tr>
+          <th>名前</th>
+          <td><%= @comment.user.name %></td>
+        </tr>
+        <tr>
+          <th>ニックネーム</th>
+          <td><%= @comment.user.nickname %></td>
+        </tr>
+        <tr>
+          <th>コメント</th>
+          <td><%= @comment.comment %></td>
+        </tr>
+        <tr>
+          <th>感情分析スコア</th>
+          <td class="sentiment-score">
+            [<span style="<%= @comment.score < 0 ? 'color: red;' : '' %>"><%= @comment.score %></span>]
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <%= link_to '投稿へ', admin_post_path(@comment.post.id), class:"btn btn-info" %>
+            <%= link_to '削除', admin_comment_path(@comment), method: :delete, data: { confirm: '本当に削除しますか？' }, class:"btn btn-danger" %>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

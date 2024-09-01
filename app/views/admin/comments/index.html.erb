@@ -11,18 +11,20 @@
         <table class="table">
           <thead>
             <tr>
-              <th>名前</th>
               <th>ニックネーム</th>
               <th>コメント</th>
+              <th>感情分析スコア</th>
               <th></th>
             </tr>
           </thead>
           <tbody>
             <% @comments.each do |comment| %>
               <tr>
-                <td><%= comment.user.name %></td>
                 <td><%= comment.user.nickname %></td>
                 <td><%= comment.comment %></td>
+                <td class="sentiment-score">
+                  [<span style="<%= comment.score < 0 ? 'color: red;' : '' %>"><%= comment.score %></span>]
+                </td>
                 <td><%= link_to "詳細", admin_comment_path(comment), class: "btn btn-success" %></td>
               </tr>
             <% end %>
