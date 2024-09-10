@@ -1,9 +1,17 @@
 @use '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Klee One", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+
+body {
+  padding-top: 56px; /* ヘッダーの高さ分だけコンテンツに余白を追加 */
 }
 
 // 背景色
@@ -19,6 +27,12 @@
   color: #01204E;
 }
 
+.highlight {
+  font-size: 1.25em; /* 必要に応じてフォントサイズを調整 */
+  font-weight: bold;
+  display: inline; /* インライン要素のままにする */
+}
+
 .table {
   position: center;
   margin-top: 10px;
@@ -26,6 +40,7 @@
 }
 
 .underline {
+  font-weight: bold;
   color: #01204E;
   border-bottom: 3px dashed #000;
   border-color: #FEAE6F;
