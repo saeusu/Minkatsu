@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Klee One", cursive;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
 }
 
@@ -27,6 +27,12 @@ body {
   color: #01204E;
 }
 
+.highlight {
+  font-size: 1.25em; /* 必要に応じてフォントサイズを調整 */
+  font-weight: bold;
+  display: inline; /* インライン要素のままにする */
+}
+
 .table {
   position: center;
   margin-top: 10px;
@@ -34,6 +40,7 @@ body {
 }
 
 .underline {
+  font-weight: bold;
   color: #01204E;
   border-bottom: 3px dashed #000;
   border-color: #FEAE6F;
