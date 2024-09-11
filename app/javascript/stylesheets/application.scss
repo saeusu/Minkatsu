@@ -16,34 +16,68 @@ body {
 
 // 背景色
 .row {
-  background-color: #faf3e6;
+  background-color: #F6F1F1;
 }
 
+
+/* ナビゲーションバーの背景色とボーダー */
 .navbar {
-  background-color: #01204E;
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #01204E;
 }
 
+/* 通常時のナビゲーションリンクの色とフォント */
+.navbar-nav .nav-link {
+  color: #01204E !important;
+  font-weight: bold;
+  transition: color 0.3s ease; /* スムーズな色の変化を追加 */
+}
+
+/* ホバー時のリンク色 */
+.navbar-nav .nav-link:hover {
+  color: #E85C0D !important; /* ホバー時の色を #E85C0D に設定 */
+}
+
+/* アクティブ時のリンク色 */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-item.active .nav-link {
+  color: #E85C0D !important; /* アクティブな項目の色を #E85C0D に設定 */
+}
+
+/* ドロップダウンメニューの項目の色設定 */
+.dropdown-menu .dropdown-item:hover {
+  background-color: #E85C0D !important; /* ホバー時の背景色を #E85C0D に設定 */
+  color: #ffffff !important; /* ホバー時のテキスト色 */
+}
+
+.dropdown-menu .dropdown-item:active {
+  background-color: #E85C0D !important; /* アクティブ時の背景色を #E85C0D に設定 */
+  color: #ffffff !important; /* アクティブ時のテキスト色 */
+}
 .dropdown a {
   color: #01204E;
+  font-weight: bold;
 }
+
 
 .highlight {
   font-size: 1.25em; /* 必要に応じてフォントサイズを調整 */
   font-weight: bold;
   display: inline; /* インライン要素のままにする */
+  color: #E85C0D;
 }
 
 .table {
   position: center;
   margin-top: 10px;
-  background-color: #F6DCAC;
+  background-color: #ACBDC5;
 }
 
 .underline {
   font-weight: bold;
   color: #01204E;
   border-bottom: 3px dashed #000;
-  border-color: #FEAE6F;
+  border-color: #028391;
   margin-bottom: 0;
 }
 
