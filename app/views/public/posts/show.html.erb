@@ -9,7 +9,7 @@
       <%= image_tag @post.image, class: "img-fluid mb-3", style: "margin-top: 10px;" %>
     </div>
     <div class="col-12 col-md-8">
-      <table class="table">
+      <table class="table table-bordered">
         <tr>
           <th><%= link_to @post.user.nickname, user_path(@post.user_id) %></th>
           <td>
