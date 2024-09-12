@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="underline">通知一覧</h4>
+      <% @notifications.each do |notification| %>
+        <div class="notification <%= 'unread' unless notification.checked %>">
+          <%# 通知内容に応じた表示 %>
+          <% if notification.notifiable_type == 'Favorite' %>
+            <p><%= notification.notifiable.user.name %>さんがあなたの投稿に「いいね！」しました。</p>
+          <% elsif notification.notifiable_type == 'Relationship' %>
+            <p><%= notification.notifiable.follower.name %>さんがあなたをフォローしました。</p>
+          <% end %>
+      
+          <%= link_to '確認済みにする', mark_as_read_notification_path(notification), method: :patch %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

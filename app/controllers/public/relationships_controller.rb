@@ -1,6 +1,7 @@
 class Public::RelationshipsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_guest_user, only: [:create, :update]
+  after_create :create_notification
   
   def create
     user = User.find(params[:user_id])
@@ -31,4 +32,7 @@ private
       redirect_to mypage_path, alert: "ゲストユーザーはフォローできません。会員登録をしてください。"
     end
   end
+  
+
+  
 end

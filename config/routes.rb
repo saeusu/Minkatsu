@@ -33,6 +33,12 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
     end
     resources :favorites, only: [:index]
+    
+    resources :notifications, only: [:index] do
+      member do
+        patch :mark_as_read
+      end
+    end
   end
   
   # 管理者側
