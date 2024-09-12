@@ -19,10 +19,15 @@ body {
   background-color: #F6F1F1;
 }
 
+.title {
+  color: #E85C0D;
+  font-weight: bold;
+}
+
 
 /* ナビゲーションバーの背景色とボーダー */
 .navbar {
-  background-color: #ffffff !important;
+  background-color: #F6F1F1 !important;
   border-bottom: 2px solid #01204E;
 }
 
@@ -89,7 +94,8 @@ a:active {
 .table {
   position: center;
   margin-top: 10px;
-  background-color: #ACBDC5;
+  background-color: #cad9d7;
+  // background-color: #ACBDC5;
 }
 
 .underline {
