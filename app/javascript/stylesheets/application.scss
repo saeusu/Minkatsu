@@ -54,9 +54,28 @@ body {
   background-color: #E85C0D !important; /* アクティブ時の背景色を #E85C0D に設定 */
   color: #ffffff !important; /* アクティブ時のテキスト色 */
 }
+
 .dropdown a {
   color: #01204E;
   font-weight: bold;
+}
+
+
+/* リンクの通常状態 */
+a {
+  color: #028391; /* カーソルを合わせない状態の色 */
+  text-decoration: none; /* 下線を消したい場合はこれを追加 */
+}
+
+/* リンクのホバー状態（カーソルを合わせた状態） */
+a:hover {
+  color: #E85C0D; /* カーソルを合わせた時の色 */
+}
+
+/* リンクがクリックされた状態（フォーカス状態） */
+a:focus,
+a:active {
+  color: #E85C0D; /* クリックされた時の色 */
 }
 
 
