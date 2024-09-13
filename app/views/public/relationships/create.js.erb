@@ -1,0 +1,3 @@
+$("#follow-button-<%= @user.id %>").replaceWith("<%= j(render 'public/relationships/btn', user: @user) %>");
+$("#follower-count-<%= @user.id %>").text("<%= @user.followers.count %>");
+$("#following-count-<%= @user.id %>").text("<%= @user.followings.count %>");
