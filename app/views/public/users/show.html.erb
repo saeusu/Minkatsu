@@ -22,7 +22,7 @@
       <div class="row m-2">
         <div>
           <%= link_to user_followings_path(@user) do %>
-            <span id="followings_cunter" class="name-link">
+            <span id="following-count-<%= @user.id %>" class="name-link">
               <%= @user.followings.count %>
             </span>
             <span class="relationships-name ml-1">フォロー中</span>
@@ -30,7 +30,7 @@
         </div>
         <div class="ml-3">
           <%= link_to user_followers_path(@user) do %>
-            <span id="followers_cunter" class="name-link">
+            <span id="follower-count-<%= @user.id %>" class="name-link">  
               <%= @user.followers.count %>
             </span>
             <span class="relationships-name ml-1">フォロワー</span>

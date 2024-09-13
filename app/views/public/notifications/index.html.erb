@@ -2,17 +2,23 @@
   <div class="row">
     <div class="col-12">
       <h4 class="underline">通知一覧</h4>
-      <% @notifications.each do |notification| %>
-        <div class="notification <%= 'unread' unless notification.checked %>">
-          <%# 通知内容に応じた表示 %>
-          <% if notification.notifiable_type == 'Favorite' %>
-            <p><%= notification.notifiable.user.nickname %>さんがあなたの投稿に「いいね！」しました。</p>
-          <% elsif notification.notifiable_type == 'Relationship' %>
-            <p><%= notification.notifiable.follower.nickname %>さんがあなたをフォローしました。</p>
-          <% end %>
       
-          <%= link_to '確認済みにする', mark_as_read_notification_path(notification), method: :patch %>
-        </div>
+      <% @notifications.each do |notification| %>
+        <table class="table">
+          <tr>
+            <div class="notification <%= 'unread' unless notification.checked %>">
+              <% if notification.notifiable_type == 'Favorite' %>
+                <td><%= notification.notifiable.user.nickname %>さんがあなたの投稿に「いいね！」しました。</td>
+              <% elsif notification.notifiable_type == 'Relationship' %>
+                <td><%= notification.notifiable.follower.nickname %>さんがあなたをフォローしました。</td>
+              <% end %>
+              <td class="d-flex justify-content-end">
+                <%= link_to 'OK', mark_as_read_notification_path(notification), method: :patch, class:"btn btn-success" %>
+              </td>
+            </div>
+          </tr>  
+            
+        </table>
       <% end %>
     </div>
   </div>

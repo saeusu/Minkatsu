@@ -8,8 +8,10 @@ class Favorite < ApplicationRecord
   validates :user_id, uniqueness: {scope: :post_id}
   
   private
-
   def create_notification
-    Notification.create(user: self.liked_user,notifiable: self)
+    Notification.create(
+      user: self.post.user, # 通知を受け取るユーザー
+      notifiable: self
+    )
   end
 end
