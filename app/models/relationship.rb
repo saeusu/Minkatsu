@@ -5,7 +5,7 @@ class Relationship < ApplicationRecord
   
   after_create :create_notification
   
-private  
+  private  
   def create_notification
     Notification.create(
       user: followed, # 通知を受け取るユーザー（フォローされたユーザー）
