@@ -167,3 +167,13 @@ button.btn {
   -webkit-transform: translateX(0%);
   transform: translateX(0%);
 }
+
+
+.notification {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.notification.unread {
+  background-color: #cad9d7; /* 未読通知の背景色 */
+}
