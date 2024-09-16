@@ -1,11 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-4">
-      <% if flash[:notice] %>
-        <div class="alert alert-success">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
+      
+      <%= render 'layouts/success_message' %>
+      
       <%= image_tag @post.image, class: "img-fluid mb-3", style: "margin-top: 10px;" %>
     </div>
     <div class="col-12 col-md-8">
@@ -38,6 +36,7 @@
         </tr>
       </table>
       
+      
       <div class=<%= "favorite-" + @post.id.to_s %> >
         <%= render "public/favorites/btn", post: @post %>
       </div>
@@ -48,7 +47,10 @@
       <div class="comments-index">
         <%= render "public/comments/index", post: @post %>
       </div>
-      <%= render "public/comments/form", post: @post, comment: @comment %>
+      <div class="mb-2">
+        <%= render "public/comments/form", post: @post, comment: @comment %>
+      </div>
+      
     </div>
   </div>
 </div>

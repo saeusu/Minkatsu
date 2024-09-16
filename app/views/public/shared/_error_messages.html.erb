@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div class="alert alert-danger">
+  <div class="alert alert-danger mt-2">
     <h5><%= pluralize(resource.errors.count, '件エラー') %>が発生しました</h5>
     <ul>
       <% resource.errors.each do |attribute, message| %>
