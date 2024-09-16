@@ -3,20 +3,12 @@
     <div class="col-12">
       <h4 class="underline mt-2"><%= @user.name %>さんのマイページ</h4>
 
-      
-        <% if flash[:notice] %>
-          <div class="alert alert-success">
-            <%= flash[:notice] %>
-          </div>
-        <% elsif flash[:alert] %>
-          <div class="alert alert-danger">
-            <%= flash[:alert] %>
-          </div>
-        <% end %>
+        <%= render 'layouts/flash' %>
         
         <div class="row m-2">
           <% if @user.email != "guest@example.com" %>
             <div>
+              <i class="fa-solid fa-user"></i>
               <%= link_to user_followings_path(@user) do %>
                 <span id="followings_cunter" class="name-link">
                   <%= @user.followings.count %>

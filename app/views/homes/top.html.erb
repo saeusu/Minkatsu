@@ -1,15 +1,13 @@
 <div class="container">
-  <% if flash[:notice] %>
-    <div class="alert alert-success">
-      <%= flash[:notice] %>
-    </div>
-  <% end %>
+  
+  <%= render 'layouts/success_message' %>
+  
   <div class="row justify-content-center">
     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6 text-center">
       <h2 class="title">Minkatsu</h2>
       <img src="<%= image_path 'about.jpg' %>" class="img-fluid" alt="お部屋を快適に">
       <div class="d-flex justify-content-around mt-2">
-        <div class="row">
+        <div class="row mb-2">
           <div>
             <%= link_to new_user_registration_path, class:"btn btn-flat" do %>
               <span>新規登録</span>

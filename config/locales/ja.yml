@@ -10,6 +10,7 @@ ja:
         name: "商品名"
         body: "本文"
         price: "金額"
+        genre: "ジャンル"
     errors:
       models:
         user:
