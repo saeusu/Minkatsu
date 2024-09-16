@@ -25,7 +25,7 @@
 ​
 ## 設計書
 - ER図
-  ![Minkatsu_ER図 drawio](https://github.com/user-attachments/assets/1ee465b5-9318-4551-beed-3538dbb7e64d)
+  ![SNS_ER図 drawio](https://github.com/user-attachments/assets/950b614c-eba3-48ff-979c-f283686ebf90)
 
 - 画面遷移図
   ![Minkatsu_UIFlows_ drawio](https://github.com/user-attachments/assets/cdee272c-0954-43d1-bd26-503332c5a6e1)
