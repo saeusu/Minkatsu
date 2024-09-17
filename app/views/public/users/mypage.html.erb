@@ -5,28 +5,11 @@
 
         <%= render 'layouts/flash' %>
         
-        <div class="row m-2">
-          <% if @user.email != "guest@example.com" %>
-            <div>
-              <i class="fa-solid fa-user"></i>
-              <%= link_to user_followings_path(@user) do %>
-                <span id="followings_cunter" class="name-link">
-                  <%= @user.followings.count %>
-                </span>
-                <span class="relationships-name ml-1">フォロー中</span>
-              <% end %>
-            </div>
-            <div class="ml-3">
-              <%= link_to user_followers_path(@user) do %>
-                <span id="followers_cunter" class="name-link">
-                  <%= @user.followers.count %>
-                </span>
-                <span class="relationships-name ml-1">フォロワー</span>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-        
+      <div class="row m-2">
+        <% if @user.email != "guest@example.com" %>
+          <%= render "public/relationships/follow_count", user: @user %>
+        <% end %>
+      </div>
 
         
        <div class="row">
@@ -38,15 +21,15 @@
           
             <table class="table table-bordered">
               <tr>
-                <td style="width: 30%; padding-left: 20px;">名前</td>
+                <td>名前</td>
                 <td style="width: 70%;"><%= @user.name %></td>
               </tr>
               <tr>
-                <td style="width: 30%; padding-left: 20px;">ニックネーム</td>
+                <td>ニックネーム</td>
                 <td style="width: 70%;"><%= @user.nickname %></td>
               </tr>
               <tr>
-                <td style="width: 30%; padding-left: 20px;">メールアドレス</td>
+                <td>メールアドレス</td>
                 <td style="width: 70%;"><%= @user.email %></td>
               </tr>
             </table>
