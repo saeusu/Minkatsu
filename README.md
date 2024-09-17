@@ -28,7 +28,7 @@
   ![SNS_ER図 drawio](https://github.com/user-attachments/assets/950b614c-eba3-48ff-979c-f283686ebf90)
 
 - 画面遷移図
-  ![Minkatsu_UIFlows_ drawio](https://github.com/user-attachments/assets/cdee272c-0954-43d1-bd26-503332c5a6e1)
+  ![ポートフォリオ制作_UIFlows_ drawio](https://github.com/user-attachments/assets/f6654576-888e-4a1e-b401-1ccf9ab65490)  
 
 
 - アプリケーション詳細設計:(https://docs.google.com/spreadsheets/d/1c7y2gMjikHUbAWBlEJT8U8jZn-dryq8msB4_TSfF4wc/edit?usp=sharing)
