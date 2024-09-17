@@ -83,7 +83,7 @@ a:active {
   color: #E85C0D; /* クリックされた時の色 */
 }
 
-
+// about 強調ページ
 .highlight {
   font-size: 1.25em; /* 必要に応じてフォントサイズを調整 */
   font-weight: bold;
@@ -95,9 +95,9 @@ a:active {
   position: center;
   margin-top: 10px;
   background-color: #cad9d7;
-  // background-color: #ACBDC5;
 }
 
+// 破線
 .underline {
   font-weight: bold;
   color: #01204E;
@@ -114,7 +114,6 @@ a:active {
 .card-text {
   color: #01204E;
 }
-
 
 // ボタン
 .btn,
@@ -168,7 +167,7 @@ button.btn {
   transform: translateX(0%);
 }
 
-
+// 通知
 .notification {
   padding: 10px;
   border-bottom: 1px solid #ccc;
