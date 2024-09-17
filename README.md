@@ -81,11 +81,12 @@
 |ジャンル編集|・ジャンルの編集ができる。|×|
 ​
 ## 開発環境
-- OS：Linux(CentOS)
+- OS：Linux(Amazon Linux 2)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
 - JSライブラリ：jQuery
 - IDE：Cloud9
+- API：Google Natural Language API
 ​
 ## 使用素材
 - PAKUTASO
