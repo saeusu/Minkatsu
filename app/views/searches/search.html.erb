@@ -16,7 +16,7 @@
               <% if result.is_a?(User) %>
                 <tr>
                   <th>ユーザー名</th>
-                  <td><%= result.name %></td>
+                  <td><%= result.nickname %></td>
                   <td><%= link_to '詳細', user_path(result), class:"btn btn-success" %></td>
                 </tr>
               <% elsif result.is_a?(Post) %>
