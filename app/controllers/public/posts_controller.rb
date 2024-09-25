@@ -13,11 +13,17 @@ class Public::PostsController < ApplicationController
   
   def index
     @post = Post.new
-    if params[:genre_id].present?
-      @posts = Post.where(genre_id: params[:genre_id])
-    else
-      @posts = Post.all
-    end
+    @posts = if params[:genre_id].present?
+                Post.where(genre_id: params[:genre_id])
+              else
+                Post.all
+              end
+    
+    @posts = if params[:sort] == 'old'
+                @posts.order(created_at: :asc)
+              else
+                @posts.order(created_at: :desc)
+              end  
   end
   
   def create
