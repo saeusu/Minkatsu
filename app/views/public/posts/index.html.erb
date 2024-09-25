@@ -17,23 +17,15 @@
       
       <%= render 'layouts/flash' %>
       
-      <div class="d-flex flex-column flex-md-row justify-content-end my-2">
-        <div class="form-group">
-          <%= form_with(url: posts_path, method: :get, class: "form-row") do |f| %>
-            <div class="col-md-6 col-sm-12 mb-2 mb-md-0">
-              <!-- 並び替えプルダウン -->
-              <%= f.select(:sort, options_for_select([["新しい順", "new"], ["古い順", "old"]], params[:sort]), {}, class: "form-control") %>
-            </div>
-            <div class="col-md-6 col-sm-12 mb-2 mb-md-0">
-              <!-- ジャンル選択プルダウン -->
-              <%= f.select(:genre_id, options_for_select([["すべて", ""]].concat(Genre.all.map { |g| [g.name, g.id] }), params[:genre_id]), {}, class: "form-control") %>
-            </div>
-            <div class="col-md-12 mt-2">
-              <%= f.submit("適用", class: "btn btn-primary btn-block") %>
-            </div>
+      <div class="row my-2">
+        <div class="col-12 col-md-auto">
+          <%= form_with(url: posts_path, method: :get, class: "form-inline") do |f| %>
+            <%= f.select(:sort, options_for_select([["新しい順", "new"], ["古い順", "old"]], params[:sort]), {}, class: "form-control mb-2 mb-md-0 mr-md-2") %>
+            <%= f.select(:genre_id, options_for_select([["すべて", ""]].concat(Genre.all.map { |g| [g.name, g.id] }), params[:genre_id]), {}, class: "form-control mb-2 mb-md-0 mr-md-2") %>
+            <%= f.submit("適用", class: "btn btn-primary mb-2 mb-md-0") %>
           <% end %>
         </div>
-        <div class="ml-md-2 mt-2 mt-md-0">
+        <div class="col-12 col-md-auto ml-md-2">
           <%= render "searches/form" %>
         </div>
       </div>
