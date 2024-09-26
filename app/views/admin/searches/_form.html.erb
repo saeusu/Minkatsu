@@ -1,7 +1,7 @@
-<% if user_signed_in? %>
-  <%= form_with(url: search_path, method: :get, class: "form-inline d-flex") do |form| %>
+<% if admin_signed_in? %>
+  <%= form_with(url: admin_search_path, method: :get, class: "form-inline d-flex") do |form| %>
     <div class="form-group mr-2">
-      <%= form.select(:search_target, options_for_select(@search_options.map { |option| [option, option] }, selected: params[:search_target]), { include_blank: false }, class: "form-control") %>
+      <%= form.select(:search_target, @search_options.concat([['コメント', 'コメント']]), { include_blank: false }, class: "form-control") %>
     </div>
     <div class="input-group mr-2">
       <%= form.text_field :keyword, placeholder: "キーワードを入力", value: params[:keyword], class: "form-control" %>
