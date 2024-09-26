@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-12 col-md-4">
+      <%= render 'layouts/success_message' %>
       <%= image_tag @post.image, class: "img-fluid mb-3", style: "margin-top: 10px;" %>
     </div>
     <div class="col-12 col-md-8">
       <table class="table">
         <tr>
           <th><%= link_to @post.user.nickname, admin_user_path(@post.user_id) %></th>
-          <td></td>
+          <td>
+            <%= link_to '削除', admin_post_path, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-danger"%>
+          </td>
         </tr>
         <tr>
           <th>商品名</th>

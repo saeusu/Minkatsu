@@ -49,11 +49,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/' => 'homes#top'
     get "/search", to: "searches#search"
-    resources :posts
     resources :genres, only: [:index, :create, :edit, :update, :destroy]
     resources :users, only: [:show, :edit, :update]
     resources :comments, only: [:index,:show, :destroy]
-    resources :posts, only: [:show, :index]
+    resources :posts, only: [:show, :index, :destroy]
   end
     devise_scope :admin do
     get '/admin/sign_out', to: 'admin/sessions#destroy'
