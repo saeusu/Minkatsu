@@ -8,7 +8,11 @@
           </h4>
         </div>
         <div>
-          <i class="fa-regular fa-bell"></i>
+          <% if @unread_notifications_exist %>
+            <i class="fa-solid fa-bell"></i>   <!-- 未読通知がある場合 -->
+          <% else %>
+            <i class="fa-regular fa-bell"></i> <!-- すべて既読の場合 -->
+          <% end %>
           <%= @notifications.count %>件
         </div>
       </div>
