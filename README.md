@@ -1,5 +1,5 @@
 
-# "Minkatsu" minkatsu.xyz
+# "Minkatsu" [minkatsu.xyz](http://minkatsu.xyz/)
 ## -みんなで便利な商品を活用しよう-
 ## サイト概要
 ### サイトテーマ
