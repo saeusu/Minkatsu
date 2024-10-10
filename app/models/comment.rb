@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
-  
+  has_many :notifications, as: :notifiable, dependent: :destroy
   
   validates :comment, presence: true, length: {maximum: 200 }
   
@@ -16,5 +16,13 @@ class Comment < ApplicationRecord
       Comment.where('comment LIKE ?', '%' + content + '%')
     end
   end
+  
+  private
+  def create_notification
+    Notification.create(
+      user: self.post.user,
+      notifiable: self
+      )
+  end    
   
 end

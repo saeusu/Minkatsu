@@ -30,6 +30,10 @@
               <div>
                 <%= notification.notifiable.follower.nickname %>さんがあなたをフォローしました。
               </div>
+            <% elsif notification.notifiable_type == 'Comment' %>
+              <div>
+                <%= notification.notifiable.comment.nickname %>さんがあなたの投稿にコメントしました。
+              </div>  
             <% end %>
             <div>
               <%= link_to 'OK', mark_as_read_notification_path(notification), method: :patch, class:"btn btn-success" %>
